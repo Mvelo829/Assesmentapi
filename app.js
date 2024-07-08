@@ -5,7 +5,7 @@ const db = require('./db'); // Import the database connection
 const cors = require('cors');
 
 
-const allowedOrigins = ['http://localhost:3000', 'http://assesmentapi-production.up.railway.app'];
+const allowedOrigins = ['http://localhost:3000', 'https://assesmentadmin-production.up.railway.app'];
 
 // CORS options
 const corsOptions = {
