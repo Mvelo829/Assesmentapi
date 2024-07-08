@@ -5,13 +5,20 @@ const db = require('./db'); // Import the database connection
 const cors = require('cors');
 
 
+const allowedOrigins = ['http://localhost:3000', 'http://assesmentapi-production.up.railway.app'];
+
 // CORS options
 const corsOptions = {
-    origin: 'http://localhost:3000,http://assesmentapi-production.up.railway.app',
+    origin: (origin, callback) => {
+        if (allowedOrigins.includes(origin) || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: ['Content-Type', 'Authorization']
-  };
-
+};
 const app = express();
 const PORT = process.env.PORT || 7000;
 
