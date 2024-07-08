@@ -7,7 +7,7 @@ const cors = require('cors');
 
 // CORS options
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:3000,http://assesmentapi-production.up.railway.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: ['Content-Type', 'Authorization']
   };
